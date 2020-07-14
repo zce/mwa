@@ -1,0 +1,49 @@
+{
+  "name": "mwa",
+  "version": "0.1.0",
+  "description": "Easily create your own middleware layer.",
+  "keywords": [
+    "mwa",
+    "zce"
+  ],
+  "homepage": "https://github.com/zce/mwa#readme",
+  "bugs": {
+    "url": "https://github.com/zce/mwa/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zce/mwa.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "zce",
+    "email": "w@zce.me",
+    "url": "https://zce.me"
+  },
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "example": "example",
+    "test": "test"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "lint": "standard --fix",
+    "test": "jest --coverage"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.1.0",
+    "standard": "^14.3.4"
+  },
+  "engines": {
+    "node": ">=8.6"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
