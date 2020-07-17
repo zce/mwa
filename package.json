@@ -21,6 +21,7 @@
     "url": "https://zce.me"
   },
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "directories": {
     "lib": "lib",
     "example": "example",
@@ -30,20 +31,55 @@
     "lib"
   ],
   "scripts": {
-    "lint": "standard --fix",
-    "test": "jest --coverage"
+    "lint": "eslint **/*.ts",
+    "build": "tsc",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "prepare": "npm run build"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "eslintConfig": {
+    "env": {
+      "es2020": true,
+      "node": true
+    },
+    "extends": [
+      "standard"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 11,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {}
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.23",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "eslint": "^7.4.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "jest": "^26.1.0",
-    "standard": "^14.3.4"
+    "ts-jest": "^26.1.2",
+    "typescript": "^3.9.6"
   },
   "engines": {
-    "node": ">=8.6"
+    "node": ">=10"
   },
-  "standard": {
-    "env": [
-      "jest"
-    ]
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }

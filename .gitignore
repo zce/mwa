@@ -1,4 +1,10 @@
-.DS_Store,
-coverage
+.DS_Store
+
 node_modules
+
+lib/
+types/
+
+coverage/
+
 yarn.lock
