@@ -15,6 +15,6 @@ jobs:
       - name: Linting
         run: npm run lint
       - name: Testing
-        run: npm run test
+        run: npm run cov
       - name: Reporting
         run: npx codecov
