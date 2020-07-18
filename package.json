@@ -4,6 +4,8 @@
   "description": "Easily create your own middleware layer.",
   "keywords": [
     "mwa",
+    "compose",
+    "middleware",
     "zce"
   ],
   "homepage": "https://github.com/zce/mwa#readme",
@@ -45,11 +47,11 @@
   },
   "eslintConfig": {
     "extends": "standard-ts",
-    "parserOptions": {
-      "project": "tsconfig.json"
+    "rules": {
+      "@typescript-eslint/promise-function-async": "off",
+      "@typescript-eslint/return-await": "off"
     }
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.4",
     "@types/node": "^14.0.23",

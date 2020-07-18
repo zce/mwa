@@ -10,7 +10,7 @@
 [![devDependency Status][devdependency-img]][devdependency-url]
 [![Code Style][style-img]][style-url]
 
-> Easily create your own middleware layer.
+> **M**iddle **W**are **A**sync, Easily create your own middleware layer. It's like koa's middleware.
 
 ## Installation
 
@@ -23,32 +23,55 @@ $ yarn add mwa
 
 ## Usage
 
-<!-- TODO: Introduction of API use -->
-
 ```javascript
-const mwa = require('mwa')
-const result = mwa('zce')
-// result => 'zce@zce.me'
+const app = mwa()
+
+app.use(async (state, next) => {
+  console.log('mw1 start: ', state)
+  state.a = 1
+  await next()
+  console.log('mw1 end: ', state)
+})
+
+app.use(async (state, next) => {
+  console.log('mw2 start: ', state)
+  state.b = 1
+  await next()
+  console.log('mw2 end: ', state)
+})
+
+;(async () => {
+  const initialState = {}
+  await app.run(initialState)
+  console.log('all completed')
+})()
 ```
 
 ## API
 
-<!-- TODO: Introduction of API -->
+### mwa()
 
-### mwa(name[, options])
+Return a new Mwa instance.
 
-#### name
+### Instance
 
-- Type: `string`
-- Details: name string
+#### .use(middleware)
 
-#### options
+Use the given middleware. Return the instance itself.
 
-##### host
+##### middleware
 
-- Type: `string`
-- Details: host string
-- Default: `'zce.me'`
+- Type: `async function` or `async function[]`
+- Details: middleware function.
+
+#### .run(state)
+
+Run all middlewares. Return a Promise.
+
+##### state
+
+- Type: `any`
+- Details: middleware context.
 
 ## Contributing
 
