@@ -10,7 +10,7 @@
 [![devDependency Status][devdependency-img]][devdependency-url]
 [![Code Style][style-img]][style-url]
 
-> **M**iddle **W**are **A**sync, Easily create your own middleware layer. It's like koa's middleware.
+> 😘 **M**iddle **W**are **A**sync, easily create your own middleware layer. It's like koa's middleware.
 
 ## Installation
 
