@@ -24,11 +24,6 @@
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "directories": {
-    "lib": "lib",
-    "example": "example",
-    "test": "test"
-  },
   "files": [
     "lib"
   ],
