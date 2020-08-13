@@ -36,16 +36,21 @@
     "cov": "jest --coverage",
     "prepare": "run-s build test"
   },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node"
-  },
   "eslintConfig": {
     "extends": "standard-ts",
     "rules": {
       "@typescript-eslint/promise-function-async": "off",
       "@typescript-eslint/return-await": "off"
     }
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "renovate": {
+    "extends": [
+      "zce"
+    ]
   },
   "devDependencies": {
     "@types/jest": "^26.0.4",
@@ -62,7 +67,6 @@
     "node": ">=10"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org",
-    "access": "public"
+    "registry": "https://registry.npmjs.org"
   }
 }

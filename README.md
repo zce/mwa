@@ -90,10 +90,10 @@ Run all middlewares. Return a Promise.
 
 
 
-[actions-img]: https://img.shields.io/github/workflow/status/zce/mwa/CI?label=actions
+[actions-img]: https://img.shields.io/github/workflow/status/zce/mwa/CI
 [actions-url]: https://github.com/zce/mwa/actions
-[travis-img]: https://img.shields.io/travis/zce/mwa?label=travis
-[travis-url]: https://travis-ci.org/zce/mwa
+[travis-img]: https://img.shields.io/travis/com/zce/mwa?label=travis
+[travis-url]: https://travis-ci.com/zce/mwa
 [codecov-img]: https://img.shields.io/codecov/c/github/zce/mwa
 [codecov-url]: https://codecov.io/gh/zce/mwa
 [license-img]: https://img.shields.io/github/license/zce/mwa
