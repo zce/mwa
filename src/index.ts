@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/return-await, @typescript-eslint/promise-function-async */
+
 export type Middleware<S> = (state: S, next: () => Promise<void>) => Promise<void> | void
 
 /**
@@ -27,9 +29,9 @@ export class Mwa<S> {
   /**
    * Run all middlewares.
    * @param state initial state
+   * @see {@link https://github.com/koajs/compose/blob/master/index.js}
    */
   run (state: S): Promise<void> {
-    // https://github.com/koajs/compose/blob/master/index.js
     const next = async (): Promise<void> => {
       const current = this.middlewares.shift()
       if (current == null) return Promise.resolve()
@@ -50,6 +52,6 @@ export class Mwa<S> {
 export default Mwa.create
 
 // For CommonJS default export support
-// https://github.com/sindresorhus/conf/blob/master/source/index.ts
+// https://github.com/sindresorhus/conf/blob/master/source/index.ts#L577-L579
 module.exports = Mwa.create
 module.exports.default = Mwa.create
