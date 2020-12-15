@@ -1,5 +1,9 @@
 /* eslint-disable @typescript-eslint/return-await, @typescript-eslint/promise-function-async */
 
+/**
+ * Middleware
+ * @template S state type
+ */
 export type Middleware<S> = (state: S, next: () => Promise<void>) => Promise<void> | void
 
 /**
