@@ -1,11 +1,6 @@
 .DS_Store
-
+coverage
 node_modules
-
-lib/
-types/
-
-coverage/
-
+lib
 package-lock.json
 yarn.lock

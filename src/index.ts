@@ -56,6 +56,6 @@ export class Mwa<S> {
 export default Mwa.create
 
 // For CommonJS default export support
-// https://github.com/sindresorhus/conf/blob/master/source/index.ts#L577-L579
 module.exports = Mwa.create
 module.exports.default = Mwa.create
+module.exports.Mwa = Mwa

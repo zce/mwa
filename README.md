@@ -1,7 +1,6 @@
 # mwa
 
-[![GitHub Actions Status][actions-img]][actions-url]
-[![Travis CI Status][travis-img]][travis-url]
+[![Build Status][travis-img]][travis-url]
 [![Coverage Status][codecov-img]][codecov-url]
 [![License][license-img]][license-url]
 [![NPM Downloads][downloads-img]][downloads-url]
@@ -90,8 +89,6 @@ Run all middlewares. Return a Promise.
 
 
 
-[actions-img]: https://img.shields.io/github/workflow/status/zce/mwa/CI
-[actions-url]: https://github.com/zce/mwa/actions
 [travis-img]: https://img.shields.io/travis/com/zce/mwa?label=travis
 [travis-url]: https://travis-ci.com/zce/mwa
 [codecov-img]: https://img.shields.io/codecov/c/github/zce/mwa
@@ -99,9 +96,9 @@ Run all middlewares. Return a Promise.
 [license-img]: https://img.shields.io/github/license/zce/mwa
 [license-url]: https://github.com/zce/mwa/blob/master/LICENSE
 [downloads-img]: https://img.shields.io/npm/dm/mwa
-[downloads-url]: https://npmjs.org/package/mwa
+[downloads-url]: https://npm.im/mwa
 [version-img]: https://img.shields.io/npm/v/mwa
-[version-url]: https://npmjs.org/package/mwa
+[version-url]: https://npm.im/mwa
 [dependency-img]: https://img.shields.io/david/zce/mwa
 [dependency-url]: https://david-dm.org/zce/mwa
 [devdependency-img]: https://img.shields.io/david/dev/zce/mwa

@@ -1,6 +1,6 @@
-import mwa from '../src'
+import createMwa from '../src'
 
-const app = mwa<Record<string, number>>()
+const app = createMwa<Record<string, number>>()
 
 app.use(async (state, next) => {
   console.log('mw1 start: ', state)
@@ -16,4 +16,6 @@ app.use(async (state, next) => {
   console.log('mw2 end: ', state)
 })
 
-app.run({}).then(() => console.log('all completed'))
+app.run({})
+  .then(() => console.log('all completed'))
+  .catch(err => console.error(err))

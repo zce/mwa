@@ -1,10 +1,10 @@
-import mwa from '../src'
+import createMwa from '../src'
 
 test('middlewares', async () => {
   type State = Record<string, number>
   const order: number[] = []
 
-  const app = mwa<State>()
+  const app = createMwa<State>()
 
   app.use(async (state, next) => {
     expect(state.a).toBe(1)
