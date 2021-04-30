@@ -1,3 +1,6 @@
+.idea
+.vscode
+.nova
 .DS_Store
 coverage
 node_modules
