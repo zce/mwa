@@ -36,13 +36,13 @@ export class Mwa<S> {
    * @see {@link https://github.com/koajs/compose/blob/master/index.js}
    */
   run (state: S): Promise<void> {
-    const next = async (): Promise<void> => {
-      const current = this.middlewares.shift()
-      if (current == null) return Promise.resolve()
-      const result = current(state, next)
+    const next = async (idx: number): Promise<void> => {
+      const middleware = this.middlewares[idx]
+      if (middleware == null) return Promise.resolve()
+      const result = middleware(state, () => next(idx + 1))
       return Promise.resolve(result)
     }
-    return next()
+    return next(0)
   }
 
   /**
