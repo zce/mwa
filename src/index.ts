@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/return-await, @typescript-eslint/promise-function-async */
-
 /**
  * Middleware
  * @template S state type
@@ -35,14 +33,14 @@ export class Mwa<S> {
    * @param state initial state
    * @see {@link https://github.com/koajs/compose/blob/master/index.js}
    */
-  run (state: S): Promise<void> {
+  async run (state: S): Promise<void> {
     const next = async (idx: number): Promise<void> => {
       const middleware = this.middlewares[idx]
-      if (middleware == null) return Promise.resolve()
-      const result = middleware(state, () => next(idx + 1))
-      return Promise.resolve(result)
+      if (middleware == null) return await Promise.resolve()
+      const result = middleware(state, async () => await next(idx + 1))
+      return await Promise.resolve(result)
     }
-    return next(0)
+    return await next(0)
   }
 
   /**
@@ -54,8 +52,3 @@ export class Mwa<S> {
 }
 
 export default Mwa.create
-
-// For CommonJS default export support
-module.exports = Mwa.create
-module.exports.default = Mwa.create
-module.exports.Mwa = Mwa

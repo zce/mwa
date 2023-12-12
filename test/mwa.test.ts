@@ -1,3 +1,4 @@
+import { test, expect } from 'vitest'
 import createMwa from '../src'
 
 test('middlewares', async () => {

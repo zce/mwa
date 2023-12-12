@@ -1,6 +1,6 @@
 # mwa
 
-[![Build Status][travis-img]][travis-url]
+[![Build Status][build-img]][build-url]
 [![Coverage Status][codecov-img]][codecov-url]
 [![License][license-img]][license-url]
 [![NPM Downloads][downloads-img]][downloads-url]
@@ -16,13 +16,21 @@
 ```shell
 $ npm install mwa
 
+# or pnpm
+$ pnpm add mwa
+
 # or yarn
 $ yarn add mwa
 ```
 
+> [!NOTE]
+> `mwa` is an [ESM-only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) package.
+
 ## Usage
 
-```javascript
+```js
+import mwa from 'mwa'
+
 const app = mwa()
 
 app.use(async (state, next) => {
@@ -39,11 +47,12 @@ app.use(async (state, next) => {
   console.log('mw2 end: ', state)
 })
 
-;(async () => {
-  const initialState = {}
-  await app.run(initialState)
+try {
+  await app.run({})
   console.log('all completed')
-})()
+} catch (err) {
+  console.error(err)
+}
 ```
 
 ## API
@@ -89,8 +98,8 @@ Run all middlewares. Return a Promise.
 
 
 
-[travis-img]: https://img.shields.io/travis/com/zce/mwa?label=travis
-[travis-url]: https://travis-ci.com/zce/mwa
+[build-img]: https://img.shields.io/github/actions/workflow/status/zce/mwa/main.yml
+[build-url]: https://github.com/zce/mwa/actions
 [codecov-img]: https://img.shields.io/codecov/c/github/zce/mwa
 [codecov-url]: https://codecov.io/gh/zce/mwa
 [license-img]: https://img.shields.io/github/license/zce/mwa

@@ -16,6 +16,9 @@ app.use(async (state, next) => {
   console.log('mw2 end: ', state)
 })
 
-app.run({})
-  .then(() => console.log('all completed'))
-  .catch(err => console.error(err))
+try {
+  await app.run({})
+  console.log('all completed')
+} catch (err: any) {
+  console.error(err)
+}

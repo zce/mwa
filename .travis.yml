@@ -1,7 +1,0 @@
-language: node_js
-
-node_js:
-  - lts/*
-
-after_script:
-  - npx codecov
