@@ -18,27 +18,16 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc && tsup",
-    "test": "vitest run"
-  },
-  "tsup": {
-    "entry": [
-      "src/index.ts"
-    ],
-    "format": "esm",
-    "target": "es2022",
-    "clean": true,
-    "dts": {
-      "entry": "src/index.ts"
-    }
+    "build": "tsc",
+    "test": "node --import tsx --test test/*.ts"
   },
   "prettier": "@zce/prettier-config",
   "devDependencies": {
+    "@types/node": "^22.13.13",
     "@zce/prettier-config": "^1.0.0",
     "prettier": "^3.1.1",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.3",
-    "vitest": "^1.0.4"
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
   },
   "packageManager": "pnpm@10.7.0",
   "engines": {

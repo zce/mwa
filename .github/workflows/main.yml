@@ -13,10 +13,8 @@ jobs:
           node-version: lts/*
           cache: pnpm
       - run: pnpm install
-      - run: pnpm i @vitest/coverage-v8
       - run: pnpm build
-      - run: pnpm test -- --coverage
-      - run: pnpm dlx codecov
+      - run: pnpm test
 
   publish:
     if: github.repository == 'zce/mwa' && startsWith(github.ref, 'refs/tags')
