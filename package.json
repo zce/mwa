@@ -23,7 +23,7 @@
   },
   "prettier": "@zce/prettier-config",
   "devDependencies": {
-    "@types/node": "^22.13.13",
+    "@types/node": "^24.0.0",
     "@zce/prettier-config": "^1.0.0",
     "prettier": "^3.1.1",
     "tsx": "^4.19.3",
